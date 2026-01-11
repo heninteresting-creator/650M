@@ -17,8 +17,8 @@ BATCH_SIZE = 16
 def clear_gpu_memory():
     gc.collect()
     if torch.cuda.is_available():
-        torch.cuda.empty_cache()
         torch.cuda.synchronize()
+        torch.cuda.empty_cache()
 
 clear_gpu_memory()
 
